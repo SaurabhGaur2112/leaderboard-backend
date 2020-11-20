@@ -3,6 +3,7 @@ const path = require('path');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const compression = require('compression');
+const fileUpload = require('express-fileupload');
 
 require('dotenv').config({ path: path.resolve(__dirname, `./env/${process.env.ENV_FILE}`) });
 
@@ -24,6 +25,9 @@ if (process.env.NODE_ENV !== 'development') {
   };
   app.use(cors(corsOptions));
 }
+// file user are uploading should go to s3
+app.use(fileUpload());
+app.use('/tmp', express.static(`${__dirname}/tmp`));
 
 app.use(
   '/api',
