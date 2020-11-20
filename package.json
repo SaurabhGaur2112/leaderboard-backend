@@ -1,0 +1,32 @@
+{
+  "name": "leaderboard-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint --fix src/",
+    "dev": "ENV_FILE=.env.local NODE_ENV=development nodemon server.js",
+    "start": "node server.js"
+  },
+  "author": "saurabh gaur <gaursaurabh68@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "lodash": "^4.17.15",
+    "path": "^0.12.7",
+    "pg": "^8.0.2",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "eslint": "6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-react-hooks": "2.5.0"
+  }
+}
