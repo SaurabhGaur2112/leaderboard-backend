@@ -1,4 +1,3 @@
-const _ = require('lodash');
 const Leaderboard = require('../../models/leaderboard/leaderboard.model');
 
 // Retrieve all leaders.
