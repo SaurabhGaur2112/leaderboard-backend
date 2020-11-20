@@ -15,9 +15,10 @@ const app = express();
 app.use(compression());
 
 // Security
+if (process.env.NODE_ENV === 'development') {
+  app.use(cors());
+}
 if (process.env.NODE_ENV !== 'development') {
-  // app.use(helmet());
-
   const corsOptions = {
     origin: [/\.wallnit\.io$/, /\.wallnit\.com$/],
   };
