@@ -6,8 +6,7 @@ exports.create = (req, res) => {
   const file = _.get(req, 'files.image');
   const fileName = `${Math.random().toString().replace('0.', '')}.pdf`;
 
-  file.mv(`/tmp/${fileName}`, (fileErr) => {
-    console.log('query fileErr', fileErr);
+  file.mv(`tmp/${fileName}`, (fileErr) => {
     if (fileErr) {
       res.status(500).send({
         status: 'failed',

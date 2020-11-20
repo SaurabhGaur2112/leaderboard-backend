@@ -1,4 +1,3 @@
-const _ = require('lodash');
 // database connection
 const connection = require('../../config/db.connection');
 
@@ -8,8 +7,17 @@ const Player = (application) => {
 };
 
 Player.create = (data, result) => {
-  console.log('query data', data);
-  result(null, data);
+  connection.query(`INSERT INTO leaders (name, score, img) VALUES ('${data.name}', '${data.score}', '${data.img}')`, (err) => {
+    if (err) {
+      result({
+        message: 'Leader creation failed',
+      }, null);
+      return;
+    }
+    result(null, {
+      message: 'Leader successfully created',
+    });
+  });
 };
 
 module.exports = Player;
