@@ -4,7 +4,7 @@ const Player = require('../../models/player/player.model');
 // add player.
 exports.create = (req, res) => {
   const file = _.get(req, 'files.image');
-  const fileName = `${Math.random().toString().replace('0.', '')}.pdf`;
+  const fileName = `${Math.random().toString().replace('0.', '')}.jpeg`;
 
   file.mv(`tmp/${fileName}`, (fileErr) => {
     if (fileErr) {
