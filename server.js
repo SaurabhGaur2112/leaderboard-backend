@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 if (process.env.NODE_ENV !== 'development') {
   const corsOptions = {
-    origin: [/\.wallnit\.io$/, /\.wallnit\.com$/],
+    origin: [/\.netlify\.app$/, /\.netlify\.com$/],
   };
   app.use(cors(corsOptions));
 }
