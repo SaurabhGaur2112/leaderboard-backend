@@ -20,10 +20,11 @@ if (process.env.NODE_ENV === 'development') {
   app.use(cors());
 }
 if (process.env.NODE_ENV !== 'development') {
-  const corsOptions = {
-    origin: [/\.netlify\.app$/, /\.netlify\.com$/],
-  };
-  app.use(cors(corsOptions));
+  // const corsOptions = {
+  //   origin: [/\.netlify\.app$/, /\.netlify\.com$/],
+  // };
+  app.use(cors());
+  // app.use(cors(corsOptions));
 }
 // file user are uploading should go to s3
 app.use(fileUpload());
