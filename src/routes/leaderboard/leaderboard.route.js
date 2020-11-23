@@ -5,6 +5,6 @@ const leaderboard = require('../../controllers/leaderboard/leaderboard.controlle
 const router = express.Router();
 
 // Retrieve all leaders
-router.get('/', leaderboard.getAll);
+router.get('/:id', leaderboard.getAll);
 
 module.exports = router;
