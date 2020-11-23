@@ -1,10 +1,12 @@
 const _ = require('lodash');
 const Player = require('../../models/player/player.model');
+// utils modules
+const getFileExtension = require('../../utils/serializer');
 
 // add player.
 exports.create = (req, res) => {
   const file = _.get(req, 'files.image');
-  const fileName = `${Math.random().toString().replace('0.', '')}.jpeg`;
+  const fileName = `${Math.random().toString().replace('0.', '')}.${getFileExtension(file.name)}`;
 
   file.mv(`tmp/${fileName}`, (fileErr) => {
     if (fileErr) {
